@@ -7,7 +7,7 @@ ARG TAG
 COPY nebula.sh /root/nebula.sh
 
 RUN set -ex \
-	&& apk add --no-cache wget ca-certificates \
+	&& apk add --no-cache wget ca-certificates iptables \
 	&& chmod +x /root/nebula.sh \
 	&& /root/nebula.sh "${TARGETPLATFORM}" "${TAG}"
 
